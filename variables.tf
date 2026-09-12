@@ -41,20 +41,21 @@ variable "datastore_id" {
   description = "Proxmox datastore used for the LXC root filesystem."
 }
 
-variable "template_file_id" {
-  type        = string
-  description = <<EOT
-LXC template already available in Proxmox storage.
-
-Example:
-local:vztmpl/ubuntu-24.04-standard_24.04-2_amd64.tar.zst
-EOT
-}
-
 variable "operating_system" {
   type        = string
   default     = "ubuntu"
   description = "Operating system type for the LXC container."
+}
+
+
+##############################################
+# LXC Template
+##############################################
+
+variable "template_url" {
+  type        = string
+  description = "URL of the LXC operating system template."
+  default     = "https://download.proxmox.com/images/system/ubuntu-24.04-standard_24.04-2_amd64.tar.zst"
 }
 
 

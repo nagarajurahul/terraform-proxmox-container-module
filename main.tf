@@ -1,5 +1,4 @@
 # https://registry.terraform.io/providers/bpg/proxmox/latest/docs/resources/virtual_environment_container
-
 resource "proxmox_virtual_environment_container" "lxc" {
   node_name = var.node_name
   vm_id     = var.vm_id
@@ -26,7 +25,7 @@ resource "proxmox_virtual_environment_container" "lxc" {
   }
 
   operating_system {
-    template_file_id = var.template_file_id
+    template_file_id = proxmox_download_file.lxc_template.id
     type             = var.operating_system
   }
 
@@ -57,4 +56,13 @@ resource "proxmox_virtual_environment_container" "lxc" {
   features {
     nesting = var.enable_nesting
   }
+}
+
+# https://registry.terraform.io/providers/bpg/proxmox/latest/docs/resources/download_file
+resource "proxmox_download_file" "lxc_template" {
+  content_type = "vztmpl"
+  datastore_id = var.datastore_id
+  node_name    = var.node_name
+
+  url = var.template_url
 }
