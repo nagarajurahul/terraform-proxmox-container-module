@@ -1,3 +1,5 @@
+# https://registry.terraform.io/providers/bpg/proxmox/latest/docs/resources/virtual_environment_container
+
 resource "proxmox_virtual_environment_container" "lxc" {
   node_name = var.node_name
   vm_id     = var.vm_id
