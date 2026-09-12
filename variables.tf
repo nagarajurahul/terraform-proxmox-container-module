@@ -120,12 +120,6 @@ variable "enable_nesting" {
   description = "Enable nesting. Required when running Docker inside the LXC."
 }
 
-variable "enable_keyctl" {
-  type        = bool
-  default     = false
-  description = "Enable keyctl support inside the LXC."
-}
-
 
 ##############################################
 # Network
@@ -141,25 +135,6 @@ variable "network_interface_name" {
   type        = string
   default     = "eth0"
   description = "Network interface name inside the LXC."
-}
-
-variable "ipv4_address" {
-  type        = string
-  default     = "dhcp"
-  description = <<EOT
-IPv4 configuration.
-
-Examples:
-dhcp
-10.0.0.150/24
-EOT
-}
-
-variable "ipv4_gateway" {
-  type        = string
-  default     = null
-  nullable    = true
-  description = "IPv4 gateway when using a static IP."
 }
 
 
