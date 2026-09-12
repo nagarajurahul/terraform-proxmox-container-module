@@ -61,7 +61,7 @@ resource "proxmox_virtual_environment_container" "lxc" {
 # https://registry.terraform.io/providers/bpg/proxmox/latest/docs/resources/download_file
 resource "proxmox_download_file" "lxc_template" {
   content_type = "vztmpl"
-  datastore_id = var.datastore_id
+  datastore_id = var.template_datastore_id
   node_name    = var.node_name
 
   url = var.template_url

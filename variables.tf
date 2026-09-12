@@ -58,6 +58,12 @@ variable "template_url" {
   default     = "https://download.proxmox.com/images/system/ubuntu-24.04-standard_24.04-2_amd64.tar.zst"
 }
 
+variable "template_datastore_id" {
+  type        = string
+  default     = "local"
+  description = "Proxmox datastore used for the LXC template."
+}
+
 
 ##############################################
 # Compute Resources
