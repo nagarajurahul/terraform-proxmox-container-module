@@ -10,7 +10,7 @@ on:
 env:
   # verbosity setting for Terraform logs
   TF_LOG: INFO
-  TERRAFORM_VERSION: '1.14.0'
+  TERRAFORM_VERSION: '1.16.2'
 
 jobs:
   #############################################
