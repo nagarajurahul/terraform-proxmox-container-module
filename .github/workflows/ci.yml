@@ -2,15 +2,15 @@ name: CI
 
 on:
   push:
-    branches: [ main, develop, feature/** ]
+    branches: [ main, develop, feature/**, chore/** ]
   pull_request:
-    branches: [ main, develop, feature/** ]
+    branches: [ main, develop, feature/**, chore/** ]
   workflow_dispatch:
 
 env:
   # verbosity setting for Terraform logs
   TF_LOG: INFO
-  TERRAFORM_VERSION: '1.14.0'
+  TERRAFORM_VERSION: '1.16.2'
 
 jobs:
   #############################################
